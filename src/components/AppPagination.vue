@@ -46,7 +46,7 @@ export default defineComponent({
     },
     value: {
       type: Number,
-      required: true,
+      default: 0,
     },
   },
   computed: {

@@ -6,7 +6,7 @@
       class="search-input__input"
       placeholder="Painting title"
       :value="value"
-      @input="$emit('input', $event.target.value)"
+      @input="onInput"
     />
     <button class="search-input__close-btn" v-if="value.length" @click="reset">
       <img src="/src/assets/close.svg" class="search-input__icon" />
@@ -29,6 +29,10 @@ export default defineComponent({
   methods: {
     reset() {
       this.$emit("input", "");
+    },
+    onInput(event: Event) {
+      const target = event.target as HTMLInputElement;
+      this.$emit("input", target.value);
     },
   },
 });

@@ -5,8 +5,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import CharacterItem, { type CharacterItemProps } from "./CharacterItem.vue";
+import type { CharacterListData } from "@/store/characters";
+import { defineComponent, type PropType } from "vue";
+import CharacterItem from "./CharacterItem.vue";
 
 export default defineComponent({
   name: "CharacterList",
@@ -15,7 +16,7 @@ export default defineComponent({
   },
   props: {
     list: {
-      type: Array as () => CharacterItemProps["item"][],
+      type: Array as PropType<CharacterListData["results"]>,
       required: true,
     },
     isLoading: {

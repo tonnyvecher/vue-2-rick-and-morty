@@ -1,19 +1,18 @@
 import { fileURLToPath, URL } from "node:url";
 
 import { defineConfig } from "vite";
-import legacy from "@vitejs/plugin-legacy";
+// import legacy from "@vitejs/plugin-legacy";
 import vue2 from "@vitejs/plugin-vue2";
-import svgLoader from "vite-svg-loader";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // base: "//vue-2-rick-and-morty",
   plugins: [
     vue2(),
-    legacy({
-      targets: ["ie >= 11"],
-      additionalLegacyPolyfills: ["regenerator-runtime/runtime"],
-    }),
-    svgLoader(),
+    // legacy({
+    //   targets: ["ie >= 11"],
+    //   additionalLegacyPolyfills: ["regenerator-runtime/runtime"],
+    // }),
   ],
   resolve: {
     alias: {
